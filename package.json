@@ -1,0 +1,11 @@
+{
+    "name": "elm-network-graph",
+    "version": "1.0.0",
+    "dependencies": {},
+    "devDependencies": {
+        "elm-test": "^0.18.2"
+    },
+    "repository" :"https://github.com/iosphere/elm-network-graph",
+    "license": "ISC",
+    "description": "Build Tools for elm-network-graph"
+}

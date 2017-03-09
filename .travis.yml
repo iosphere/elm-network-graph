@@ -1,0 +1,21 @@
+sudo: false
+
+language: node_js
+node_js:
+  - "5"
+
+cache:
+  directories:
+  - node_modules
+  - tests/elm-stuff
+  - elm-stuff
+
+install:
+  - npm install -g elm
+  - npm install -g elm-test
+  - elm-package install -y
+
+script:
+  - elm-make
+  - pushd tests && elm-package install -y && popd
+  - elm-test
