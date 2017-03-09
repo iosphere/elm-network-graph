@@ -1,8 +1,8 @@
 module Graph.GraphViz exposing (string)
 
-{-| Exports a Graph in GraphViz format.
+{-| Exports a Graph in [GraphViz](http://www.graphviz.org) format.
 
-@see http://www.graphviz.org
+@docs string
 -}
 
 import Graph exposing (Graph)
@@ -12,7 +12,7 @@ import Graph.Node exposing (Node)
 
 {-| A GraphViz representation of the Graph.
 -}
-string : Graph -> String
+string : Graph Node -> String
 string graph =
     let
         edgesString =
@@ -23,7 +23,7 @@ string graph =
             List.map node graph.nodes
                 |> String.join "\n"
     in
-        "digraph G { rankdir=TB \n" ++ nodesString ++ edgesString ++ "} "
+        "digraph G { rankdir=TB\n" ++ nodesString ++ edgesString ++ "}"
 
 
 edge : Edge -> String
