@@ -4,6 +4,7 @@ module Graph.Node
         , Identifier
         , Name
         , fromName
+        , identifierFromName
         , namePrefix
         )
 
@@ -22,7 +23,7 @@ The node's name is a list of strings to allow you to represent paths
 @docs fromName
 
 ## Other
-@docs namePrefix
+@docs namePrefix, identifierFromName
 -}
 
 
@@ -64,7 +65,9 @@ namePrefix n name =
     List.take n name
 
 
-{-| -}
+{-| Create an identifier from a name. This is only useful if you expect names to
+be unique in your graph.
+-}
 identifierFromName : Name -> Identifier
 identifierFromName name =
     String.join "-" name
