@@ -1,13 +1,15 @@
 module Tests exposing (all)
 
-import Test exposing (Test)
-import Graph.Tests
+import Graph.Colored.NodeTests
 import Graph.GraphVizTests
+import Graph.Tests
+import Test exposing (Test)
 
 
 all : Test
 all =
     Test.concat
-        [ Graph.Tests.all
+        [ Graph.Colored.NodeTests.all
         , Graph.GraphVizTests.all
+        , Graph.Tests.all
         ]

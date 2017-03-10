@@ -1,4 +1,4 @@
-module Graph.GraphVizTests exposing (..)
+module Graph.GraphVizTests exposing (all)
 
 import Expect
 import Graph as Graph exposing (Graph)
