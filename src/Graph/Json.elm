@@ -2,10 +2,12 @@ module Graph.Json exposing (decode, encode)
 
 {-| JSON encoding and decoding of the graph is close to the JSON representation
 in sigmajs.org to allow easier intergration.
+
+@docs decode, encode
 -}
 
 import Graph exposing (Graph)
-import Graph.Edge as Edge exposing (Edge)
+import Graph.Edge.Json as Edge
 import Graph.Node as Node exposing (Node)
 import Graph.Node.Json as Node
 import Json.Decode as JD exposing (Decoder)
