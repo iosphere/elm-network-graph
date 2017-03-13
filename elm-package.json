@@ -8,6 +8,7 @@
     ],
     "exposed-modules": [
         "Graph",
+        "Graph.Degree",
         "Graph.GraphViz",
         "Graph.Json",
         "Graph.Node",

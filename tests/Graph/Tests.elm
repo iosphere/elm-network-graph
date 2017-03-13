@@ -1,5 +1,6 @@
 module Graph.Tests exposing (..)
 
+import Dict
 import Expect
 import Graph as Graph exposing (Graph)
 import Graph.Edge exposing (Edge)
@@ -10,7 +11,7 @@ import Test exposing (..)
 all : Test
 all =
     describe "Graph.Tests"
-        [ testFilter ]
+        [ testFilter, testDictFromList ]
 
 
 testFilter : Test
@@ -19,6 +20,14 @@ testFilter =
         \() ->
             filterGraph
                 |> Expect.equal (Graph.filter filterFunc dummyGraph)
+
+
+testDictFromList : Test
+testDictFromList =
+    test "Graph.Tests.dictFromList" <|
+        \() ->
+            Dict.fromList [ ( "a", Node "a" [ "a" ] ), ( "b", Node "b" [ "b" ] ) ]
+                |> Expect.equal (Node.dictFromList [ Node "a" [ "a" ], Node "b" [ "b" ] ])
 
 
 filterFunc : Node -> Bool

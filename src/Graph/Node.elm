@@ -3,6 +3,7 @@ module Graph.Node
         ( Node
         , Identifier
         , Name
+        , dictFromList
         , fromName
         , identifierFromName
         , namePrefix
@@ -23,8 +24,10 @@ The node's name is a list of strings to allow you to represent paths
 @docs fromName
 
 ## Other
-@docs namePrefix, identifierFromName
+@docs namePrefix, identifierFromName, dictFromList
 -}
+
+import Dict exposing (Dict)
 
 
 {-| A simple type alias for String to make function signatures easier readable.
@@ -71,3 +74,11 @@ be unique in your graph.
 identifierFromName : Name -> Identifier
 identifierFromName name =
     String.join "-" name
+
+
+{-|
+Get a dictionary to look up nodes for identifiers.
+-}
+dictFromList : List Node -> Dict Identifier Node
+dictFromList nodes =
+    List.foldl (\node dict -> Dict.insert node.identifier node dict) Dict.empty nodes
