@@ -49,7 +49,7 @@ testOutgoing ( node, expectedDegree ) =
         )
     <|
         \() ->
-            Degree.outgoing dummyGraph node
+            Degree.outgoing dummyGraph node.identifier
                 |> Expect.equal expectedDegree
 
 
@@ -61,7 +61,7 @@ testIncoming ( node, expectedDegree ) =
         )
     <|
         \() ->
-            Degree.incoming dummyGraph node
+            Degree.incoming dummyGraph node.identifier
                 |> Expect.equal expectedDegree
 
 
