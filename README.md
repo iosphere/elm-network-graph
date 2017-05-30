@@ -22,7 +22,7 @@ type Node. Most functions provided by this work with Graph Node.
 
 ## Output options
 
-Two outputs are supported JSON or GraphViz:
+Two outputs are supported JSON or [DOT language](http://www.graphviz.org/content/dot-language) ([GraphViz](http://www.graphviz.org)):
 
 ```graphviz
 digraph G { rankdir=TB
@@ -35,6 +35,7 @@ digraph G { rankdir=TB
 }
 ```
 
+### Example screenshot of a GraphViz export as SVG
 ![Screenshot of a GraphViz export as SVG](https://github.com/iosphere/elm-network-graph/raw/1.0.0/graphviz.png)
 
 
